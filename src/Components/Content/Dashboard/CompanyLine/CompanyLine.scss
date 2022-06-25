@@ -1,0 +1,51 @@
+.companyLine {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border: 1px solid #D6D6D6;
+  border-radius: 10px;
+
+  .case {
+    width: 33.33%;
+    padding: 38px 30px;
+
+    h3 {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 19px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+
+      /* Colors/Black */
+
+      color: #000000;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6px 8px;
+      background: #4E59FF;
+      border-radius: 4px;
+
+      h3 {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        /* identical to box height, or 171% */
+
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+
+        /* Colors/White */
+
+        color: #FFFFFF;
+      }
+    }
+  }
+}
