@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {motion} from 'framer-motion';
 import CompanyLine from "./CompanyLine/CompanyLine";
 import axios from "axios";
+import companiesList from './CompanyLine/constant';
 
 interface Company {
 
@@ -9,9 +10,9 @@ interface Company {
 
 const DashBoard = () => {
 
-    const [companies, setCompanies] = useState<any>([])
+    const [companies, setCompanies] = useState<any>(companiesList.companiesList)
 
-    const getCompanies = async () => {
+    /*const getCompanies = async () => {
         await axios.get('https://test.wertkt.com/api/biz/', {
             headers: {
                 'Access-Control-Allow-Origin': 'http://localhost:3000',
@@ -30,7 +31,7 @@ const DashBoard = () => {
 
     useEffect(() => {
         getCompanies()
-    }, [])
+    }, [])*/
 
     return (
         <motion.div className="dashBoard"

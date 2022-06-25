@@ -1,0 +1,130 @@
+.dashBoardCompany {
+  width: 100%;
+  padding: 40px;
+  padding-left: 340px;
+  background-color: #FFFFFF;
+
+  @media screen and (max-width: 950px){
+    padding-left: 0;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 50px 40px 40px 20px;
+
+    @media screen and (max-width: 950px){
+      background-color: #F9F9F9;
+      width: 100%;
+    }
+
+    .arrowContainer {
+      margin-right: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 9px;
+      gap: 10px;
+
+      width: 42px;
+      height: 42px;
+
+      /* Colors/Blue - Light Gradient */
+
+      background: linear-gradient(161.01deg, #01F2CF -8.06%, #99ACFF -8.05%, #4E6EFC 108.81%);
+      /* Shadows/Button/First/Enabled */
+
+      box-shadow: 0px 6px 20px rgba(5, 55, 156, 0.25);
+      border-radius: 100px;
+    }
+
+    .textContainer {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      height: 64px;
+      justify-content: space-between;
+      h1 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 36px;
+      }
+      h2 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        /* identical to box height, or 150% */
+
+        text-transform: uppercase;
+
+        /* Colors/Grey */
+
+        color: #686868;
+      }
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #FFFFFF;
+
+    @media screen and (max-width: 950px){
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .case {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 30px;
+      gap: 10px;
+      margin: 20px;
+
+      width: 520px;
+      height: 414px;
+
+      background: #FFFFFF;
+      /* Colors/Light Grey */
+
+      border: 1px solid #D6D6D6;
+      border-radius: 10px;
+
+      @media screen and (max-width: 540px){
+        width: 95%;
+        margin: 20px 0px;
+      }
+
+
+      h1 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 27px;
+        display: flex;
+        align-items: center;
+
+        /* Colors/Black */
+
+        color: #000000;
+      }
+    }
+  }
+}
