@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/tktRecrutement/static/css/main.4bf0726a.css",
+    "main.js": "/tktRecrutement/static/js/main.7c427512.js",
+    "static/media/chat-bubble-question.svg": "/tktRecrutement/static/media/chat-bubble-question.573c47ec4100bdfc116aa2e6752959ff.svg",
+    "static/media/bell.svg": "/tktRecrutement/static/media/bell.0ee0fe7da083af6bc33984948dba7776.svg",
+    "static/media/dashboard.svg": "/tktRecrutement/static/media/dashboard.611eac97e0f321350d969ce82bfdd702.svg",
+    "static/media/TKTLogo.svg": "/tktRecrutement/static/media/TKTLogo.b1070ebf4238eeed6bfb22348bd5e259.svg",
+    "index.html": "/tktRecrutement/index.html",
+    "static/media/cancel.svg": "/tktRecrutement/static/media/cancel.eb3fc7b8af6f8d5d70f745d303a77269.svg",
+    "static/media/menu-scale.svg": "/tktRecrutement/static/media/menu-scale.a6b6e265e1651e5b208fa808403b8c43.svg",
+    "static/media/arrow-left.svg": "/tktRecrutement/static/media/arrow-left.b47b0622c88f6ad5b655403d606a7b1b.svg",
+    "static/media/add.svg": "/tktRecrutement/static/media/add.38e119f2b843c5483e835e7ca0e876ea.svg",
+    "main.4bf0726a.css.map": "/tktRecrutement/static/css/main.4bf0726a.css.map",
+    "main.7c427512.js.map": "/tktRecrutement/static/js/main.7c427512.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4bf0726a.css",
+    "static/js/main.7c427512.js"
+  ]
+}
