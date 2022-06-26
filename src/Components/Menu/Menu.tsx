@@ -15,8 +15,8 @@ const Menu = () => {
                     <img src={require('../../Images/TKTLogo.svg').default} alt="tktLogo"/>
                 </div>
                 <div className="itemsContainer">
-                    {menuItemList.menuItemList.map(res => (
-                        <MenuItem {...res}/>
+                    {menuItemList.menuItemList.map((res, num : number) => (
+                        <MenuItem key={`Menu${num}`} {...res}/>
                     ))}
                 </div>
             </div>

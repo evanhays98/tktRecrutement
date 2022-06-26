@@ -3,6 +3,7 @@ import {motion} from 'framer-motion';
 import {Link} from "react-router-dom";
 
 interface Props {
+    id: string;
     company: string;
     siren: number;
     category: string;
@@ -11,7 +12,7 @@ interface Props {
 const CompanyLine = (props: Props) => {
 
     return (
-        <Link to={'/companiesInfo'}>
+        <Link to={`/companiesInfo?id=${props.id}`} >
             <motion.div className="companyLine"
                         initial={{opacity: 0}}
                         animate={{opacity: 1}}
