@@ -1,29 +1,113 @@
 .menu {
 
+  .menuContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 28px;
+    padding-top: 50px;
+    z-index: 2;
+    background-color: $superLightGrey;
 
-  background-color: $superLightGrey;
-  width: 300px;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  padding: 20px;
-
-  @media screen and (max-width: 950px){
-    width: 0;
-    display: none;
-  }
-
-  .firstContainer {
     .imageContainer {
-      height: 40px;
-      margin: 40px 50px;
+      height: 30px;
+      position: relative;
 
       img {
-        object-fit: contain;
+        position: absolute;
+        top: 2px;
+        left: 0;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    @media screen and (min-width: 950px) {
+      width: 0;
+      display: none;
+    }
+
+    .arrowContainer {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      padding: 9px;
+
+      width: 42px;
+      height: 42px;
+
+      /* Colors/Blue - Light Gradient */
+
+      background: linear-gradient(161.01deg, #01F2CF -8.06%, #99ACFF -8.05%, #4E6EFC 108.81%);
+      /* Shadows/Button/First/Enabled */
+
+      box-shadow: 0px 6px 20px rgba(5, 55, 156, 0.25);
+      border-radius: 100px;
+
+      img {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+      }
+    }
+  }
+
+  .contentMenu {
+    background-color: $superLightGrey;
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 20px;
+    z-index: 2;
+
+    @media screen and (max-width: 950px){
+      right: -100%;
+      left: auto;;
+      max-width: 400px;
+      width: 100%;
+    }
+
+
+    .firstContainer {
+      position: relative;
+      .imageContainer {
+        height: 40px;
+        margin: 40px 50px;
+
+        img {
+          object-fit: contain;
+        }
+      }
+      .arrowContainer {
+        top: 0px;
+        right: 0px;
+        position: absolute;
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 9px;
+        width: 42px;
+        height: 42px;
+
+        background: linear-gradient(161.01deg, #01F2CF -8.06%, #99ACFF -8.05%, #4E6EFC 108.81%);
+        /* Shadows/Button/First/Enabled */
+
+        box-shadow: 0px 6px 20px rgba(5, 55, 156, 0.25);
+        border-radius: 100px;
+
+        @media screen and (max-width: 950px){
+          display: flex;
+        }
+
+        img {
+          filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+        }
       }
     }
   }

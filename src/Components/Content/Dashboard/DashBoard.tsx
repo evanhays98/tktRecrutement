@@ -70,7 +70,9 @@ const DashBoard = () => {
                     exit={{opacity: 0}}>
 
             <div className="header">
-                <h1>Welcome on TKT dashboard!</h1>
+                <div className="titleContainer">
+                    <h1>Welcome on TKT dashboard!</h1>
+                </div>
                 <div className="filterContainer">
                     <div className="inputContainer">
                         <input id='company' type="text"
@@ -109,7 +111,8 @@ const DashBoard = () => {
                 </div>
                 {
                     searchCompanies?.slice(0, 10).map((res: any, num: number) => (
-                        <CompanyLine key={num} company={res?.name} category={res?.sector} siren={res?.siren} id={res?.id}/>
+                        <CompanyLine key={num} company={res?.name} category={res?.sector} siren={res?.siren}
+                                     id={res?.id}/>
                     ))
                 }
             </div>

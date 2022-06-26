@@ -13,6 +13,7 @@ import {
     Legend,
 } from 'chart.js';
 import {Bar} from 'react-chartjs-2';
+import useWindowDimensions from "../../../Utils/WindowsDimension";
 
 ChartJS.register(
     CategoryScale,
@@ -55,22 +56,6 @@ export const options = {
     },
 };
 
-const labels = ['2016', '2017'];
-
-export const data = {
-    labels,
-    datasets: [
-        {
-            data: [4500000, 2500000],
-            backgroundColor: '#4E59FF',
-            barThickness: 42,
-        },
-    ],
-};
-
-interface Company {
-
-}
 
 interface InfoCompany {
     year: any[];
@@ -85,17 +70,21 @@ const DashBoardCompany = () => {
 
     const [searchParams, setSearchParams] = useSearchParams();
     const [company, setCompany] = useState<any>()
+    const [infosC, setInfosC] = useState<any>(null)
+    const { height, width } = useWindowDimensions();
+
+
     const getCompany = async () => {
         await axios.get(`https://test.wertkt.com/api/biz/${searchParams.get("id")}/`, {
             headers: {
                 'Access-Control-Allow-Origin': '*',
                 "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
             }
-        }).then((res) => {
+        }).then(async (res) => {
             if (res.status !== 200)
                 return;
             setCompany(res.data)
-            getInfoCompanies(res.data.results)
+            getInfoCompanies(res.data?.results)
         })
             .catch(error => {
                 return;
@@ -118,51 +107,46 @@ const DashBoardCompany = () => {
             });
     }
 
-    const [infosC, setInfosC] = useState<InfoCompany>({ca: [], margin: [], ebitda: [], loss: [], year: []})
-
-    const getInfoCompanies = (resultat: any[]) => {
+    const getInfoCompanies = async (resultat: any[]) => {
         let ca: any[] = []
         let margin: any[] = []
         let ebitda: any[] = []
         let loss: any[] = []
         let year: any[] = []
-        resultat.forEach(async (res) => {
-            let data = await getInfoYearCompany(res)
-            if (data) {
-                ca.push(data?.ca)
-                margin.push(data?.margin)
-                ebitda.push(data?.ebitda)
-                loss.push(data?.loss)
-                year.push(data?.year)
-            }
-        })
-        setInfosC({
+        for (const res of resultat) {
+            let data = await getInfoYearCompany(res);
+            ca.push(data?.ca);
+            margin.push(data?.margin);
+            ebitda.push(data?.ebitda);
+            loss.push(data?.loss);
+            year.push(data?.year);
+        }
+        const data = {
             ca: ca.reverse(),
             margin: margin.reverse(),
             ebitda: ebitda.reverse(),
             loss: ebitda.reverse(),
             year: year.reverse()
-        })
+        }
+        setInfosC(data)
     }
 
-    let chartReference : any = useState({})
-
     useEffect(() => {
-        const ok = (async () => {
-            await getCompany()
-            chartReference.update()
-        })
-        ok()
+        getCompany()
     }, [])
 
+
     const getChartData = (label: any[], data: any[]) => {
+        let barthick = 42
+        if (width <= 950)
+            barthick = 30
         return {
             labels: label,
             datasets: [
                 {
                     data: data,
                     backgroundColor: '#4E59FF',
-                    barThickness: 42,
+                    barThickness: barthick,
                 },
             ],
         }
@@ -181,7 +165,7 @@ const DashBoardCompany = () => {
                     </div>
                 </Link>
                 <div className="textContainer">
-                    <h1>Welcome on TKT dashboard!</h1>
+                    <h1>Abbott and Sons</h1>
                     <h2>{`n° Siren ${company?.siren}`}</h2>
                 </div>
             </div>
@@ -192,17 +176,7 @@ const DashBoardCompany = () => {
                     <div className={'graphContainer'}>
                         <p style={{paddingBottom: 4}}>Montant (en €)</p>
                         <div className="graph">
-                            <Bar
-                                 options={options} data={{
-                                labels : infosC?.year,
-                                datasets: [
-                                    {
-                                        data: infosC?.ca,
-                                        backgroundColor: '#4E59FF',
-                                        barThickness: 42,
-                                    },
-                                ],
-                            }}
+                            <Bar options={options} data={getChartData(infosC?.year, infosC?.ca)}
                                  style={{width: '100%', height: '100%'}}/>
                         </div>
                         <p style={{alignSelf: "flex-end"}}>Année</p>
