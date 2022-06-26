@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/tktRecrutement/static/css/main.4bf0726a.css",
-    "main.js": "/tktRecrutement/static/js/main.37a38ec0.js",
+    "main.js": "/tktRecrutement/static/js/main.2d1adc27.js",
     "static/media/chat-bubble-question.svg": "/tktRecrutement/static/media/chat-bubble-question.573c47ec4100bdfc116aa2e6752959ff.svg",
     "static/media/bell.svg": "/tktRecrutement/static/media/bell.0ee0fe7da083af6bc33984948dba7776.svg",
     "static/media/dashboard.svg": "/tktRecrutement/static/media/dashboard.611eac97e0f321350d969ce82bfdd702.svg",
@@ -12,10 +12,10 @@
     "static/media/arrow-left.svg": "/tktRecrutement/static/media/arrow-left.b47b0622c88f6ad5b655403d606a7b1b.svg",
     "static/media/add.svg": "/tktRecrutement/static/media/add.38e119f2b843c5483e835e7ca0e876ea.svg",
     "main.4bf0726a.css.map": "/tktRecrutement/static/css/main.4bf0726a.css.map",
-    "main.37a38ec0.js.map": "/tktRecrutement/static/js/main.37a38ec0.js.map"
+    "main.2d1adc27.js.map": "/tktRecrutement/static/js/main.2d1adc27.js.map"
   },
   "entrypoints": [
     "static/css/main.4bf0726a.css",
-    "static/js/main.37a38ec0.js"
+    "static/js/main.2d1adc27.js"
   ]
 }
