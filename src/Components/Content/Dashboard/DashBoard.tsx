@@ -16,12 +16,7 @@ const DashBoard = () => {
     const [searchCategory, setSearchCategory] = useState('')
 
     const getCompanies = async () => {
-        await axios.get('https://test.wertkt.com/api/biz/', {
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
-            }
-        }).then((res) => {
+        await axios.get('https://test.wertkt.com/api/biz/').then((res) => {
             if (res.status !== 200)
                 return;
             setCompanies(res.data)

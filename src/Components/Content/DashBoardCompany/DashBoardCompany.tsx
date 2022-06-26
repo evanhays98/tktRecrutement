@@ -75,12 +75,8 @@ const DashBoardCompany = () => {
 
 
     const getCompany = async () => {
-        await axios.get(`https://test.wertkt.com/api/biz/${searchParams.get("id")}/`, {
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
-            }
-        }).then(async (res) => {
+        await axios.get(`https://test.wertkt.com/api/biz/${searchParams.get("id")}/`
+        ).then(async (res) => {
             if (res.status !== 200)
                 return;
             setCompany(res.data)
@@ -92,12 +88,8 @@ const DashBoardCompany = () => {
     }
 
     const getInfoYearCompany = async (num: any) => {
-        return await axios.get(` https://test.wertkt.com/api/result/${num}/`, {
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
-            }
-        }).then((res) => {
+        return await axios.get(` https://test.wertkt.com/api/result/${num}/`
+        ).then((res) => {
             if (res.status !== 200)
                 return undefined;
             return res.data
